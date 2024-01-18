@@ -67,7 +67,10 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.post(`${this.baseUrl}/carpage`, {})
+      axios.post(`${this.baseUrl}/carpage`, {
+        page:1,
+        size: 1000
+      })
           .then(response => {
             console.log(response);
             const allItems = response.data.data.list;
